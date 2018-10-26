@@ -74,7 +74,7 @@ int main(void) {
       tempnode=head;
       while(tempnode->next->next!=NULL)tempnode=tempnode->next;n++;
       printf("%d\n", n);
-    }
+    }else printf("unknown operation %s", mystr);
   }
   return 0;
 }
