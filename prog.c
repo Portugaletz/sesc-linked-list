@@ -8,7 +8,7 @@ struct Node{
 };
 
 int main(void) {
-  struct Node * head = (struct Node *)malloc(sizeof(struct Node));
+  struct Node * head = (struct Node*)malloc(sizeof(struct Node));
   head->next=NULL;
   char mystr [100];
   while (scanf("%s", mystr)!=EOF){
@@ -69,12 +69,12 @@ int main(void) {
       free(tempnode->next);
       tempnode->next->next=NULL;
     }else if(strcmp(mystr, "size")==0){
-      int n;
+      int n=0;
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
-      while(tempnode->next->next!=NULL)tempnode=tempnode->next;n++;
+      while(tempnode->next!=NULL){tempnode=tempnode->next;n++;};
       printf("%d\n", n);
-    }else printf("unknown operation %s", mystr);
+    }else printf("unknown operation %s\n", mystr);
   }
   return 0;
 }
