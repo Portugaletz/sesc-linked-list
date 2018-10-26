@@ -73,7 +73,8 @@ int main(void) {
       struct Node * tempnode=(struct Node*)malloc(sizeof(struct Node));
       tempnode=head;
       while(tempnode->next!=NULL){tempnode=tempnode->next;n++;};
-      printf("%d\n", n);
+      if (n==0){printf("empty");}else{
+      printf("%d\n", n);}
     }else printf("unknown operation %s\n", mystr);
   }
   return 0;
